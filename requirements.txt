@@ -1,0 +1,7 @@
+psutil==5.8.0
+Twisted==21.2.0
+cryptography==3.4.6
+setuptools==54.0.0
+pytz==2021.1
+django==3.2
+psycopg2-binary==2.8.6
