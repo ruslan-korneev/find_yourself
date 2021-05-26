@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qou0rhh+=l6va-ewv^e1sb8&zj2&+92wolzl5dcu)&bsm#+ha2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = os.environ.get('DEBUG', 'True')
 
 ALLOWED_HOSTS = ['*']
 
@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'find_yourself.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if os.environ.get('DB_TYPE', 'postgres') == 'sqlite':
+if not os.environ.get('DB_TYPE'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
